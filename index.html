@@ -1,9 +1,10 @@
 ﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Magic Dog</title>
+    <title>群租地监测预警系统——Magic Dog</title>
     <!-- Bootstrap Styles-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
@@ -24,7 +25,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><strong>Magic Dog</strong></a>
+                <a class="navbar-brand" href="index.html"><strong>群租地监测预警系统</strong></a>
                 <div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
             </div>
         </nav>
@@ -36,7 +37,7 @@
                         <a class="active-menu" href="index.html"><i class="fa fa-dashboard"></i> 统计数据</a>
                     </li>
                     <li>
-                        <a href="#predict"><i class="fa fa-desktop"></i> UI 预测结果</a>
+                        <a href="#predict"><i class="fa fa-desktop"></i>预测结果</a>
                     </li>
                 </ul>
             </div>
@@ -47,7 +48,8 @@
                 <div class="col-md-12">
                     <div class="jumbotron">
                         <h1>Information</h1>
-                        <p>+++++++++++++++1s+++++++++++++</p>
+                        <p>一个方便政府掌握治理群租乱象的可视化应用。
+                            可以让政府部门实时掌握市民通勤模式、消费水平分布，全面了解可能存在群租乱象的区域分布，方便城市管理；群租群体的工作地分布可以为政府布局公租房提供建议，有针对性的解决群租群体的住房需求。</p>
                         <p>
                             <a class="btn btn-primary btn-lg" role="button">Learn more</a>
                         </p>
@@ -74,8 +76,8 @@
                                 <i class="fa fa-users fa-5x"></i>
                             </div>
                             <div class="panel-right">
-                                <h3 id="visits" >22,389 </h3>
-                                <strong>高收入人数</strong>
+                                <h3 id="visits" >16% </h3>
+                                <strong>高消费人数</strong>
                             </div>
                         </div>
                     </div>
@@ -85,8 +87,8 @@
                                 <i class="fa fa-users fa-5x"></i>
                             </div>
                             <div class="panel-right">
-                                <h3 id="visits" >58,166 </h3>
-                                <strong>中收入人数</strong>   
+                                <h3 id="visits" >40%</h3>
+                                <strong>中消费人数</strong>   
                             </div>
                         </div>
                     </div>
@@ -96,8 +98,8 @@
                                 <i class="fa fa-users fa-5x"></i>                        
                             </div>
                             <div class="panel-right">
-                                <h3 id="visits" > 63,557</h3>
-                                <strong>低收入人数</strong>
+                                <h3 id="visits" > 44%</h3>
+                                <strong>低消费人数</strong>
                             </div>
                         </div>
                     </div>        			
@@ -115,8 +117,8 @@
                     <div class="col-xs-6 col-md-3">
                         <div class="panel panel-default">
                             <div class="panel-body easypiechart-panel">
-                                <h4>高收入人数</h4>
-                                <div class="easypiechart" id="easypiechart-orange"  data-percent="16" ><span class="percent" id="high" onmouseover="mouse_over_high()" onmouseout="mouse_out_high()">22,389</span>
+                                <h4>高消费人数</h4>
+                                <div class="easypiechart" id="easypiechart-orange"  data-percent="16" ><span class="percent" >14%</span>
                                 </div>
                             </div>
                         </div>
@@ -124,8 +126,8 @@
                     <div class="col-xs-6 col-md-3">
                         <div class="panel panel-default">
                             <div class="panel-body easypiechart-panel">
-                                <h4>中收入人数</h4>
-                                <div class="easypiechart" id="easypiechart-teal" data-percent="40" ><span class="percent" id="mid" onmouseover="mouse_over_mid()" onmouseout="mouse_out_mid()">58,166</span>
+                                <h4>中消费人数</h4>
+                                <div class="easypiechart" id="easypiechart-teal" data-percent="40" ><span class="percent" >40%</span>
                                 </div>
                             </div>
                         </div>
@@ -133,8 +135,8 @@
                     <div class="col-xs-6 col-md-3">
                         <div class="panel panel-default">
                             <div class="panel-body easypiechart-panel">
-                                <h4>低收入人数</h4>
-                                <div class="easypiechart" id="easypiechart-red" data-percent="44" ><span class="percent" onmouseover="mouse_over_low()" id="low" onmouseout="mouse_out_low()">63,557</span>
+                                <h4>低消费人数</h4>
+                                <div class="easypiechart" id="easypiechart-red" data-percent="44" ><span class="percent" >44%</span>
                                 </div>
                             </div>
                         </div>
@@ -163,34 +165,28 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>区域</th>
-                                                <th>人数</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr class="success">
                                                 <td>1</td>
                                                 <td>世纪大道</td>
-                                                <td>319</td>
                                             </tr>
                                             <tr class="info">
                                                 <td>2</td>
                                                 <td>锦绣路</td>
-                                                <td>249</td>
                                             </tr>
                                             <tr class="warning">
                                                 <td>3</td>
                                                 <td>飞虹路</td>
-                                                <td>241</td>
                                             </tr>
                                             <tr class="danger">
                                                 <td>4</td>
                                                 <td>辽阳路</td>
-                                                <td>231</td>
                                             </tr>
                                             <tr class="active">
                                                 <td>5</td>
                                                 <td>外马路</td>
-                                                <td>218</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -247,34 +243,28 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>区域</th>
-                                                <th>人数</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr class="success">
                                                 <td>1</td>
                                                 <td>锦绣路</td>
-                                                <td>272</td>
                                             </tr>
                                             <tr class="info">
                                                 <td>2</td>
                                                 <td>世纪大道</td>
-                                                <td>196</td>
                                             </tr>
                                             <tr class="warning">
                                                 <td>3</td>
                                                 <td>龙阳路</td>
-                                                <td>179</td>
                                             </tr>
                                             <tr class="danger">
                                                 <td>4</td>
                                                 <td>外马路</td>
-                                                <td>178</td>
                                             </tr>
                                             <tr class="active">
                                                 <td>5</td>
                                                 <td>辽阳路</td>
-                                                <td>144</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -331,34 +321,28 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>区域</th>
-                                                <th>人数</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr class="success">
                                                 <td>1</td>
                                                 <td>龙阳路</td>
-                                                <td>108</td>
                                             </tr>
                                             <tr class="info">
                                                 <td>2</td>
                                                 <td>锦绣路</td>
-                                                <td>91</td>
                                             </tr>
                                             <tr class="warning">
                                                 <td>3</td>
                                                 <td>世纪大道</td>
-                                                <td>67</td>
                                             </tr>
                                             <tr class="danger">
                                                 <td>4</td>
                                                 <td>东门路</td>
-                                                <td>58</td>
                                             </tr>
                                             <tr class="active">
                                                 <td>5</td>
                                                 <td>华夏西路</td>
-                                                <td>56</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -397,7 +381,7 @@
                     <div class="col-md-8 col-sm-12 col-xs-12">
                         <div class="panel panel-success">
                             <div class="panel-heading">
-                                联通规律用户（0:00-7:00）
+                                规律用户居住地
                             </div> 
                             <div class="panel-body">
                                 <img src="images/联通规律用户0-7.png" style="height:100%;width:100%">
@@ -407,7 +391,7 @@
                     <div class="col-md-4 col-sm-12 col-xs-12">
                         <div class="panel panel-info">
                             <div class="panel-heading">
-                                联通规律用户（0:00-7:00）
+                                规律用户居住地
                             </div>
                             <div class="panel-body">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
@@ -423,7 +407,7 @@
                     <div class="col-md-4 col-sm-12 col-xs-12">
                         <div class="panel panel-info">
                             <div class="panel-heading">
-                                联通规律用户（10:00-17:00）
+                                规律用户工作地
                             </div>
                             <div class="panel-body">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
@@ -436,7 +420,7 @@
                     <div class="col-md-8 col-sm-12 col-xs-12">
                         <div class="panel panel-success">
                             <div class="panel-heading">
-                                联通规律用户（10:00-17:00）
+                                规律用户工作地
                             </div> 
                             <div class="panel-body">
                                 <img src="images/联通规律用户10-17.png" style="height:100%;width:100%">

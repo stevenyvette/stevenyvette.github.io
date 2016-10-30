@@ -6,6 +6,14 @@ body {
     background: #323232;
 }
 
+#predict{
+    position: relative;
+    top: -70px; 
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
  #wrapper {
     width: 100%;
 }
@@ -68,7 +76,7 @@ text-align: center;
 }
 .top-navbar{
 position: fixed;
-  width: 100%;
+  width: 260px;
   z-index: 300;
     -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);

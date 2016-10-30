@@ -8,12 +8,8 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- Morris Chart Styles-->
-    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
     <!-- Custom Styles-->
     <link href="assets/css/custom-styles.css" rel="stylesheet" />
-    <!-- Google Fonts-->
-    <link href='http://fonts.useso.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
     <script type="text/javascript" src="lib/function.js"></script>
 </head>
@@ -29,49 +25,25 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.html"><strong>Magic Dog</strong></a>
-				
-		<div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
+                <div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
             </div>
-
         </nav>
         <!--/. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li>
-                        <a class="active-menu" href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a>
-                    </li>
-                    <!--
-                    <li>
-                        <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI Elements</a>
-                    </li>
-					<li>
-                        <a href="chart.html"><i class="fa fa-bar-chart-o"></i> Charts</a>
+                        <a class="active-menu" href="index.html"><i class="fa fa-dashboard"></i> 统计数据</a>
                     </li>
                     <li>
-                        <a href="tab-panel.html"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
+                        <a href="#predict"><i class="fa fa-desktop"></i> UI 预测结果</a>
                     </li>
-                    
-                    <li>
-                        <a href="table.html"><i class="fa fa-table"></i> Responsive Tables</a>
-                    </li>
-                    <li>
-                        <a href="form.html"><i class="fa fa-edit"></i> Forms </a>
-                    </li>
-                    <li>
-                        <a href="empty.html"><i class="fa fa-fw fa-file"></i> Empty Page</a>
-                    </li>
-                -->
                 </ul>
-
             </div>
-
         </nav>
         <!-- /. NAV SIDE  -->
-      
 		<div id="page-wrapper">
-            <div id="page-inner">
-                <div class="row">
+            <div id="header">
                 <div class="col-md-12">
                     <div class="jumbotron">
                         <h1>Information</h1>
@@ -82,6 +54,7 @@
                     </div>
                 </div>
             </div>
+            <div id="page-inner">
         		<div class="row">
                     <div class="col-md-3 col-sm-12 col-xs-12">
                         <div class="panel panel-primary text-center no-boder blue">
@@ -99,11 +72,10 @@
                         <div class="panel panel-primary text-center no-boder blue">
                             <div class="panel-left pull-left blue">
                                 <i class="fa fa-users fa-5x"></i>
-                                
                             </div>
                             <div class="panel-right">
-                            <h3 id="visits" >22,389 </h3>
-                             <strong>高收入人数</strong>
+                                <h3 id="visits" >22,389 </h3>
+                                <strong>高收入人数</strong>
                             </div>
                         </div>
                     </div>
@@ -111,29 +83,25 @@
                         <div class="panel panel-primary text-center no-boder blue">
                             <div class="panel-left pull-left blue">
                                 <i class="fa fa-users fa-5x"></i>
-                                
                             </div>
                             <div class="panel-right">
-                            <h3 id="visits" >58,166 </h3>
-                             <strong>中收入人数</strong>
-                                
+                                <h3 id="visits" >58,166 </h3>
+                                <strong>中收入人数</strong>   
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-12 col-xs-12">
                         <div class="panel panel-primary text-center no-boder blue">
                             <div class="panel-left pull-left blue">
-                                <i class="fa fa-users fa-5x"></i>
-                                
+                                <i class="fa fa-users fa-5x"></i>                        
                             </div>
                             <div class="panel-right">
-                            <h3 id="visits" > 63,557</h3>
-                             <strong>低收入人数</strong>
-
+                                <h3 id="visits" > 63,557</h3>
+                                <strong>低收入人数</strong>
                             </div>
                         </div>
                     </div>        			
-        		</div><!--/.row-->
+        		</div>
                 <div class="row">
                     <div class="col-xs-6 col-md-3">
                         <div class="panel panel-default">
@@ -171,9 +139,7 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
-                <!-- /. ROW  -->
                 <div class="row">
                     <div class="col-md-8 col-sm-12 col-xs-12">
                         <div class="panel panel-warning">
@@ -248,7 +214,6 @@
                         </div>
                     </div>
                     <div class="col-md-8 col-sm-12 col-xs-12">
-
                         <div class="panel panel-warning">
                             <div class="panel-heading">
                                 低消费群体分布图
@@ -405,16 +370,16 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-12 col-xs-12">
                         <div class="panel panel-info">
-                        <div class="panel-heading">
-                            高消费群体分布
+                            <div class="panel-heading">
+                                高消费群体分布
+                            </div>
+                            <div class="panel-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                            </div>
+                            <div class="panel-footer">
+                                Panel Footer
+                            </div>
                         </div>
-                        <div class="panel-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-                        </div>
-                        <div class="panel-footer">
-                            Panel Footer
-                        </div>
-                    </div>
                     </div>
                     <div class="col-md-8 col-sm-12 col-xs-12">
                         <div class="panel panel-success">
@@ -423,6 +388,162 @@
                             </div> 
                             <div class="panel-body">
                                 <img src="images/高消费群体分布图.png" style="height:100%;width:100%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 col-sm-12 col-xs-12">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                联通规律用户（0:00-7:00）
+                            </div> 
+                            <div class="panel-body">
+                                <img src="images/联通规律用户0-7.png" style="height:100%;width:100%">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                联通规律用户（0:00-7:00）
+                            </div>
+                            <div class="panel-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                            </div>
+                            <div class="panel-footer">
+                                Panel Footer
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                联通规律用户（10:00-17:00）
+                            </div>
+                            <div class="panel-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                            </div>
+                            <div class="panel-footer">
+                                Panel Footer
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-12 col-xs-12">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                联通规律用户（10:00-17:00）
+                            </div> 
+                            <div class="panel-body">
+                                <img src="images/联通规律用户10-17.png" style="height:100%;width:100%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 col-sm-12 col-xs-12">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                食药监处罚地分布
+                            </div> 
+                            <div class="panel-body">
+                                <img src="images/食药监处罚地.png" style="height:100%;width:100%">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                食药监处罚地分布
+                            </div>
+                            <div class="panel-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                            </div>
+                            <div class="panel-footer">
+                                Panel Footer
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a id="predict"></a>
+                <div class="row">
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                群租预测分布图
+                            </div>
+                            <div class="panel-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                            </div>
+                            <div class="panel-footer">
+                                Panel Footer
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-12 col-xs-12">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                群租预测分布图
+                            </div> 
+                            <div class="panel-body">
+                                <img src="images/预测出的群租分布.png" style="height:100%;width:100%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 col-sm-12 col-xs-12">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                群租群体上班地
+                            </div> 
+                            <div class="panel-body">
+                                <img src="images/群租群体上班地.png" style="height:100%;width:100%">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                群租群体上班地
+                            </div>
+                            <div class="panel-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                            </div>
+                            <div class="panel-footer">
+                                Panel Footer
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                预测出的群租是否被食药监查处
+                            </div>
+                            <div class="panel-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                            </div>
+                            <div class="panel-footer">
+                                Panel Footer
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-12 col-xs-12">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                预测出的群租是否被食药监查处
+                            </div> 
+                            <div class="panel-body">
+                                <img src="images/预测出的群租是否被食药监查处.png" style="height:100%;width:100%">
                             </div>
                         </div>
                     </div>

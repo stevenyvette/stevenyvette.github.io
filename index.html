@@ -1,517 +1,407 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>群租地监测预警系统——Magic Dog</title>
-    <!-- Bootstrap Styles-->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- FontAwesome Styles-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- Custom Styles-->
-    <link href="assets/css/custom-styles.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
-    <script type="text/javascript" src="lib/function.js"></script>
-</head>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Insight &mdash;  A Visualized Analysis Platform by CNC </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="insight--visualized platform" />
+	<meta name="keywords" content="visualized platform" />
+	<meta name="author" content="STEVEN GAO" />
 
-<body>
-    <div id="wrapper">
-        <nav class="navbar navbar-default top-navbar" role="navigation">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html"><strong>群租地监测预警系统</strong></a>
-            </div>
-        </nav>
-        <!--/. NAV TOP  -->
-        <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
-                    <li>
-                        <a class="active-menu" href="index.html"><i class="fa fa-dashboard"></i> 城市画像</a>
-                    </li>
-                    <li>
-                        <a href="#predict"><i class="fa fa-desktop"></i>群租预警</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <!-- /. NAV SIDE  -->
-		<div id="page-wrapper">
-            <div id="header">
-                <div class="col-md-12">
-                    <div class="jumbotron">
-                        <h1>平台简介</h1>
-                        <p>一个方便政府掌握治理群租乱象的可视化应用。
-                            可以让政府部门实时掌握市民通勤模式、消费水平分布，全面了解可能存在群租乱象的区域分布，方便城市管理；群租群体的工作地分布可以为政府布局公租房提供建议，有针对性的解决群租群体的住房需求。</p>
-                        <p>
-                            <a class="btn btn-primary btn-lg" role="button">更多信息</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div id="page-inner">
-                <div class="row">
-                    <div class="col-xs-6 col-md-3">
-                        <div class="panel panel-default">
-                            <div class="panel-body easypiechart-panel">
-                                <h4>总人数</h4>
-                                <div class="easypiechart" id="easypiechart-blue"  data-percent="100" ><span class="percent">144,112</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-6 col-md-3">
-                        <div class="panel panel-default">
-                            <div class="panel-body easypiechart-panel">
-                                <h4>高消费人数</h4>
-                                <div class="easypiechart" id="easypiechart-orange"  data-percent="16" ><span class="percent" >14%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-6 col-md-3">
-                        <div class="panel panel-default">
-                            <div class="panel-body easypiechart-panel">
-                                <h4>中消费人数</h4>
-                                <div class="easypiechart" id="easypiechart-teal" data-percent="40" ><span class="percent" >40%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-6 col-md-3">
-                        <div class="panel panel-default">
-                            <div class="panel-body easypiechart-panel">
-                                <h4>低消费人数</h4>
-                                <div class="easypiechart" id="easypiechart-red" data-percent="44" ><span class="percent" >44%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8 col-sm-12 col-xs-12">
-                        <div class="panel panel-warning">
-                            <div class="panel-heading">
-                                低消费区域
-                            </div> 
-                            <div class="panel-body">
-                                <img src="images/低消费区域.png" style="height:100%;width:100%">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                        <div class="panel panel-success">
-                            <div class="panel-heading">
-                                低消费区域TOP
-                            </div> 
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>区域</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="success">
-                                                <td>1</td>
-                                                <td>宝山区联谊路</td>
-                                            </tr>
-                                            <tr class="info">
-                                                <td>2</td>
-                                                <td>虹口区飞虹路</td>
-                                            </tr>
-                                            <tr class="warning">
-                                                <td>3</td>
-                                                <td>杨浦区辽阳路</td>
-                                            </tr>
-                                            <tr class="danger">
-                                                <td>4</td>
-                                                <td>黄浦区外马路</td>
-                                            </tr>
-                                            <tr class="active">
-                                                <td>5</td>
-                                                <td>松江区文翔路</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                        <div class="panel panel-success">
-                            <div class="panel-heading">
-                                低消费群体分布
-                            </div>
-                            <div class="panel-body">
-                                <p>右图为规律用户低消费群体分布图，图中节点表示低消费群体的居住地，节点越密集，表示低消费群体分布越集中。</p>
-                            </div>
-                            <div class="panel-footer">
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-8 col-sm-12 col-xs-12">
-                        <div class="panel panel-warning">
-                            <div class="panel-heading">
-                                低消费群体分布图
-                            </div> 
-                            <div class="panel-body">
-                                <img src="images/低消费群体分布图.png" style="height:100%;width:100%">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8 col-sm-12 col-xs-12">
-                        <div class="panel panel-warning">
-                            <div class="panel-heading">
-                                中等消费区域
-                            </div> 
-                            <div class="panel-body">
-                                <img src="images/中等消费区域.png" style="height:100%;width:100%">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                中等消费区域TOP
-                            </div>
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>区域</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="success">
-                                                <td>1</td>
-                                                <td>浦东新区锦绣路</td>
-                                            </tr>
-                                            <tr class="info">
-                                                <td>2</td>
-                                                <td>浦东新区龙阳路</td>
-                                            </tr>
-                                            <tr class="warning">
-                                                <td>3</td>
-                                                <td>虹口区株洲路</td>
-                                            </tr>
-                                            <tr class="danger">
-                                                <td>4</td>
-                                                <td>浦东新区成山路</td>
-                                            </tr>
-                                            <tr class="active">
-                                                <td>5</td>
-                                                <td>闵行区高兴路</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                中等消费群体分布
-                            </div>
-                            <div class="panel-body">
-                                <p>右图为规律用户中等消费群体分布图，图中节点表示中等消费群体的居住地，节点越密集，表示中等消费群体分布越集中。</p>
-                            </div>
-                            <div class="panel-footer">
-                                 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-8 col-sm-12 col-xs-12">
-                        <div class="panel panel-warning">
-                            <div class="panel-heading">
-                                中等消费群体分布图
-                            </div> 
-                            <div class="panel-body">
-                                <img src="images/中等消费群体分布图.png" style="height:100%;width:100%">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8 col-sm-12 col-xs-12">
-                        <div class="panel panel-success">
-                            <div class="panel-heading">
-                                高消费区域
-                            </div> 
-                            <div class="panel-body">
-                                <img src="images/高消费区域.png" style="height:100%;width:100%">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                        <div class="panel panel-info">      
-                            <div class="panel-heading">
-                                高消费区域TOP
-                            </div>
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>区域</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="success">
-                                                <td>1</td>
-                                                <td>浦东新区龙阳路</td>
-                                            </tr>
-                                            <tr class="info">
-                                                <td>2</td>
-                                                <td>闵行区虹梅路</td>
-                                            </tr>
-                                            <tr class="warning">
-                                                <td>3</td>
-                                                <td>长宁区茅台路</td>
-                                            </tr>
-                                            <tr class="danger">
-                                                <td>4</td>
-                                                <td>闵行区虹许路</td>
-                                            </tr>
-                                            <tr class="active">
-                                                <td>5</td>
-                                                <td>黄浦区安仁街</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                高消费群体分布
-                            </div>
-                            <div class="panel-body">
-                                <p>右图为规律用户高消费群体分布图，图中节点表示高消费群体的居住地，节点越密集，表示高消费群体分布越集中。</p>
-                            </div>
-                            <div class="panel-footer">
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-8 col-sm-12 col-xs-12">
-                        <div class="panel panel-success">
-                            <div class="panel-heading">
-                                高消费群体分布图
-                            </div> 
-                            <div class="panel-body">
-                                <img src="images/高消费群体分布图.png" style="height:100%;width:100%">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+	<!-- Google Fonts 
+	<link href='http://fonts.useso.com/css?family=Roboto+Slab:400,700|Roboto:400,300,700' rel='stylesheet' type='text/css'>-->
+	<!-- Animate -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Flexslider -->
+	<link rel="stylesheet" href="css/flexslider.css">
+	<!-- Icomoon -->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
 
-                <div class="row">
-                    <div class="col-md-8 col-sm-12 col-xs-12">
-                        <div class="panel panel-success">
-                            <div class="panel-heading">
-                                规律用户居住地
-                            </div> 
-                            <div class="panel-body">
-                                <img src="images/联通规律用户0-7.png" style="height:100%;width:100%">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                规律用户居住地
-                            </div>
-                            <div class="panel-body">
-                                <p>左图为联通规律用户的居住地分布热点图。图中节点表示联通规律用户的居住地，节点越密集，表示规律用户分布越集中。可以看出，这些规律用户的居住地主要集中在黄浦、虹口、静安区，主要在4号地铁环线内。</p>
-                            </div>
-                            <div class="panel-footer">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
+	<link rel="stylesheet" href="css/style.css">
 
-                <div class="row">
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                规律用户工作地
-                            </div>
-                            <div class="panel-body">
-                                <p>右图为联通规律用户的工作地分布热点图。图中节点表示联通规律用户的工作地，节点越密集，表示规律用户分布越集中。可以看出，这些规律用户的工作地分布范围较大，市区工作地比较集中，郊区也存在数目不少的工作地。</p>
-                            </div>
-                            <div class="panel-footer">
-                               
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-8 col-sm-12 col-xs-12">
-                        <div class="panel panel-success">
-                            <div class="panel-heading">
-                                规律用户工作地
-                            </div> 
-                            <div class="panel-body">
-                                <img src="images/联通规律用户10-17.png" style="height:100%;width:100%">
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-8 col-sm-12 col-xs-12">
-                        <div class="panel panel-success">
-                            <div class="panel-heading">
-                                餐饮治安不良区域
-                            </div> 
-                            <div class="panel-body">
-                                <img src="images/食药监处罚地.png" style="height:100%;width:100%">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                餐饮治安不良区域
-                            </div>
-                            <div class="panel-body">
-                                <p>左图为上海市餐饮治安不良区域分布热点图。图中节点表示餐饮治安不良区域，节点越密集，表示该处餐饮治安环境越差。</p>
-                            </div>
-                            <div class="panel-footer">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a id="predict"></a>
-                <div class="row">
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                群租预测分布图
-                            </div>
-                            <div class="panel-body">
-                                <p>右图为预测出的可能存在群租房的区域分布热点图。节点表示可能存在群租现象的区域，节点越密集，表示该处群租现象越严重，越需要集中整治。</p>
-                            </div>
-                            <div class="panel-footer">
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-8 col-sm-12 col-xs-12">
-                        <div class="panel panel-success">
-                            <div class="panel-heading">
-                                群租预测分布图
-                            </div> 
-                            <div class="panel-body">
-                                <img src="images/预测出的群租分布.png" style="height:100%;width:100%">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
 
-                <div class="row">
-                    <div class="col-md-8 col-sm-12 col-xs-12">
-                        <div class="panel panel-success">
-                            <div class="panel-heading">
-                                群租群体上班地
-                            </div> 
-                            <div class="panel-body">
-                                <img src="images/群租群体上班地.png" style="height:100%;width:100%">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                群租群体上班地
-                            </div>
-                            <div class="panel-body">
-                                <p>左图为预测出的群租群体工作地分布热点图。可以看出，群租群体的工作地主要集中在杨浦、宝山、虹口、（原）闸北这四个区域。这些区域工厂等劳动力密集的产业居多，群组群体多集中在此符合直观感觉。</p>
-                            </div>
-                            <div class="panel-footer">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
+	</head>
+	
+	<body>
+	<div id="fh5co-header">
+		<div class="container">
+			<!-- Mobile Toggle Menu Button -->
+			<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+			<div id="fh5co-logo">
+				<a href="index.html">insight<span>.</span></a>
+			</div>
+			<nav id="fh5co-main-nav">
+				<ul>
+					<li><a href="#" data-nav-section="home">Home</a></li>
+					<li><a href="#" data-nav-section="services">Services</a></li>
+					<li><a href="#" data-nav-section="portfolio">Portfolio</a></li>
+					<li><a href="#" data-nav-section="about">About</a></li>
+					<li><a href="#" data-nav-section="contact">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div id="fh5co-main">
+		<div class="fh5co-overlay-mobile"></div>
+		<div id="fh5co-home" class="js-fullheight" data-section="home">
+			<div class="flexslider">
+				<div class="fh5co-overlay"></div>
+				<div class="fh5co-text">
+					<div class="container">
+						<div class="row text-center">
+							<h1 class="animate-box">Show the World Before Your Eyes </h1>				
+							<p class="animate-box"><a href="platform/index.html" target="_blank" class="btn btn-primary btn-lg">Get Started</a></p>
+							<p class="animate-box"><a href="platform/help/help.html" target="_blank" class="btn btn-success btn-small">User Guide</a></p>
+							<div class="fh5co-go animate-box">
+								<a href="#" class="js-fh5co-next">See MORE DETAILS
+									<span><i class="icon-arrow-down2"></i></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			  	<ul class="slides">
+				   	<li style="background-image: url(images/slide_1.jpg);" data-stellar-background-ratio="0.5"></li>
+				   	<li style="background-image: url(images/slide_2.jpg);" data-stellar-background-ratio="0.5"></li>
+				   	<li style="background-image: url(images/slide_3.jpg);" data-stellar-background-ratio="0.5"></li>
+			  	</ul>
 
+			</div>
+		</div>
+
+		<div id="fh5co-services" data-section="services">
+			<div class="container">
+				<link rel="stylesheet" href="assets/font_icon/css/pe-icon-7-stroke.css">
+    			<link rel="stylesheet" href="assets/css/animate.css">
+				<link rel="stylesheet" href="assets/css/style.css">
+                <h3 class="block_title">Services</h3>
                 <div class="row">
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                预测出的群租是否被食药监查处
+                    <div class="col-md-3 col-sm-6">
+                        <div class="services">
+                            <div class="service-wrap">    
+                                <i class="pe-7s-monitor pe-dj pe-va"></i>
+                                <h3><a href="platform/index.html" target="_blank">Data Tables</a></h3>
+                                <p>Manage data tables.<br/>Create & Upload & Delete</p>
                             </div>
-                            <div class="panel-body">
-                                <p>右图节点为预测出的可能存在群租房的区域分布。蓝色节点表示被食药监处罚过的区域，橘色节点表示还没被食药监处罚过的区域。从图中可以看出，预测出来的群租地基本都被食药监处罚过，这与直观感觉是吻合的：群租多的地方一般餐饮治安会差一些。这一结果验证了我们预测出的群租地有一定的合理性及准确性。</p>
-                            </div>
-                            <div class="panel-footer">
-                               
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="services">
+                            <div class="service-wrap">
+                                <i class="pe-7s-science pe-dj pe-va"></i>
+                                <h3><a href="platform/index.html" target="_blank">Create Graphs</a></h3>
+                                <p>Show data in form of graphs. That's the way to bring the world right before your eyes.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-8 col-sm-12 col-xs-12">
-                        <div class="panel panel-success">
-                            <div class="panel-heading">
-                                预测出的群租是否被食药监查处
-                            </div> 
-                            <div class="panel-body">
-                                <img src="images/预测出的群租是否被食药监查处.png" style="height:100%;width:100%">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="services">
+                            <div class="service-wrap">
+                                <i class="pe-7s-edit pe-dj pe-va"></i>
+                                <h3><a href="platform/index.html" target="_blank">Remove &amp; Reshape</a></h3>
+                                <p>You can remove whatever nodes you want and see how the graph will reshape itself.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="services">
+                            <div class="service-wrap">
+                                <i class="pe-7s-config pe-dj pe-va"></i>
+                                <h3><a href="platform/help/help.html" target="_blank">Support</a></h3>
+                                <p>Read the documents for help or make your own settings here.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- /. PAGE INNER  -->
-        </div>
-        <!-- /. PAGE WRAPPER  -->
-    </div>
-    <!-- /. WRAPPER  -->
-    <!-- JS Scripts-->
-    <!-- jQuery Js -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
-    <!-- Bootstrap Js -->
-    <script src="assets/js/bootstrap.min.js"></script>
-	 
-    <!-- Metis Menu Js -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
-    <!-- Morris Chart Js -->
-    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
-    <script src="assets/js/morris/morris.js"></script>
-	
-	
-	<script src="assets/js/easypiechart.js"></script>
-	<script src="assets/js/easypiechart-data.js"></script>
-	
-	 <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
-	
-    <!-- Custom Js -->
-    <script src="assets/js/custom-scripts.js"></script>
+		</div>
 
+		<div id="fh5co-portfolio" data-section="portfolio">
+			<div class="container">
+				<div class="row r-pb">
+					<div class="col-md-8 col-md-offset-2 text-center section-heading">
+						<h2 class="fh5co-section-title animate-box">Portfolio</h2>
+						<p class="fh5co-lead animate-box">The world is so big and we are so small. Use <i>insight</i> to bring the world right before your eyes.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-sm-4 col-xs-6 col-xxs-12 animate-box">
+						<div class="img-grid">
+							<img src="images/pic_1.jpg" alt="Free HTML5 template by FREEHTML5.co" class="img-responsive">
+							<a  >
+								<div>
+									<span class="fh5co-meta">Details</span>
+									<h2 class="fh5co-title">A macroscopic snapshot of Internet connectivity</h2>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 col-xxs-12 animate-box">
+						<div class="img-grid">
+							<img src="images/pic_2.jpg" alt="Free HTML5 template by FREEHTML5.co" class="img-responsive">
+							<a >
+								<div>
+									<span class="fh5co-meta">Details</span>
+									<h2 class="fh5co-title">Arc map showing the world-wide internet traffic </h2>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 col-xxs-12 animate-box">
+						<div class="img-grid">
+							<img src="images/pic_3.jpg" alt="Free HTML5 template by FREEHTML5.co" class="img-responsive">
+							<a >
+								<div>
+									<span class="fh5co-meta">Details</span>
+									<h2 class="fh5co-title">Map of internet : colored by IP addresses</h2>
+								</div>
+							</a>
+						</div>
+					</div>
 
-</body>
+					<div class="col-md-4 col-sm-4 col-xs-6 col-xxs-12 animate-box">
+						<div class="img-grid">
+							<img src="images/pic_4.jpg" alt="Free HTML5 template by FREEHTML5.co" class="img-responsive">
+							<a >
+								<div>
+									<span class="fh5co-meta">Details</span>
+									<h2 class="fh5co-title">New Internet maps with an amazing color range.</h2>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 col-xxs-12 animate-box">
+						<div class="img-grid">
+							<img src="images/pic_5.jpg" alt="Free HTML5 template by FREEHTML5.co" class="img-responsive">
+							<a >
+								<div>
+									<span class="fh5co-meta">Details</span>
+									<h2 class="fh5co-title">Image of Social links in Canberra, Australia</h2>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 col-xxs-12 animate-box">
+						<div class="img-grid">
+							<img src="images/pic_6.jpg" alt="Free HTML5 template by FREEHTML5.co" class="img-responsive">
+							<a >
+								<div>
+									<span class="fh5co-meta">Details</span>
+									<h2 class="fh5co-title">Mapping the internet : tracing domain routes</h2>
+								</div>
+							</a>
+						</div>
+					</div>
 
+					<div class="col-md-4 col-sm-4 col-xs-6 col-xxs-12 animate-box">
+						<div class="img-grid">
+							<img src="images/pic_7.jpg" alt="Free HTML5 template by FREEHTML5.co" class="img-responsive">
+							<a >
+								<div>
+									<span class="fh5co-meta">Details</span>
+									<h2 class="fh5co-title">The largest connected component of patented Boston inventors in the mid-1990s</h2>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 col-xxs-12 animate-box">
+						<div class="img-grid">
+							<img src="images/pic_9.jpg" alt="Free HTML5 template by FREEHTML5.co" class="img-responsive">
+							<a >
+								<div>
+									<span class="fh5co-meta">Details</span>
+									<h2 class="fh5co-title">Hierachical topology of the international web cache</h2>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 col-xxs-12 animate-box">
+						<div class="img-grid">
+							<img src="images/pic_8.jpg" alt="Free HTML5 template by FREEHTML5.co" class="img-responsive">
+							<a >
+								<div>
+									<span class="fh5co-meta">Details</span>
+									<h2 class="fh5co-title">Map of protein-protein interactions.</h2>
+								</div>
+							</a>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-sm-4 col-xs-6 col-xxs-12 animate-box">
+						<div class="img-grid">
+							<img src="images/pic_10.jpg" alt="Free HTML5 template by FREEHTML5.co" class="img-responsive">
+							<a >
+								<div>
+									<span class="fh5co-meta">Details</span>
+									<h2 class="fh5co-title">neural network</h2>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 col-xxs-12 animate-box">
+						<div class="img-grid">
+							<img src="images/pic_11.jpg" alt="Free HTML5 template by FREEHTML5.co" class="img-responsive">
+							<a >
+								<div>
+									<span class="fh5co-meta">Details</span>
+									<h2 class="fh5co-title">The Legend of Sword and Fairy NPC relationship.</h2>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 col-xxs-12 animate-box">
+						<div class="img-grid">
+							<img src="images/pic_12.jpg" alt="Free HTML5 template by FREEHTML5.co" class="img-responsive">
+							<a >
+								<div>
+									<span class="fh5co-meta">Details</span>
+									<h2 class="fh5co-title">Relationship in Les-Miserables.</h2>
+								</div>
+							</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="fh5co-about" data-section="about">
+			<div class="container">
+				<div class="row r-pb">
+					<div class="col-md-8 col-md-offset-2 text-center section-heading animate-box">
+						<h2 class="fh5co-section-title">About</h2>
+						<p class="fh5co-lead">Want to get a deep comprehension of the world ? Use <i>insight</i>, a visualized data analysis platform.  </p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 animate-box">
+						<div class="fh5co-text with-plus">
+							<h2>M.E.J. Newman</h2>
+							<span class="fh5co-meta">Professor of the University of Michigan</span>
+							<p>Complex network theory, a marriage of ideas and methods from statistical physics and graph theory, has become one of the most successful frameworks for studying systems that that interact through an intricate</p>
+						</div>
+					</div>
+					<div class="col-md-6 animate-box">
+						<div class="fh5co-text">
+							<h2>Steven H. Strogatz</h2>
+							<span class="fh5co-meta">Professor of Cornell University</span>
+							<p>In the longer run, network thinking will become essential to all branches of science as we struggle to interpret the data pouring in from neurobiology, genomics, ecology, finance and the World-Wide Web. </p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="fh5co-contact" data-section="contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center section-heading">
+						<h2 class="fh5co-section-title animate-box">Contact</h2>
+						<p class="fh5co-lead animate-box">We'd love to talk about your story.</p>
+						<p class="animate-box">Time goes by so fast, people go in and out of your life. You must never miss the opportunity to tell these people how much they mean to you.</p>
+						<p class="animate-box"><a href="mailto:gaoyile@126.com" class="btn btn-primary btn-lg">Get in touch</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="fh5co-testimony" style="background-image: url(images/slide_3.jpg);" data-stellar-background-ratio="0.5">
+			<div class="fh5co-overlay"></div>
+			<div class="container">
+				<div class="row">
+					<div class="flexslider animate-box">
+							<ul class="slides">
+								<li>
+									<blockquote>
+										<p>&ldquo;One of the challenges in complex network research is the identification of essential structural features that are typically masked by the network’s topological complexity &rdquo; <cite>&mdash; Dirk Brockmann</cite></p>
+									</blockquote>
+								</li>
+								<li>
+									<blockquote>
+										<p>&ldquo;Everyone and everything is six or fewer steps away from any other person in the world, so that a chain of "a friend of a friend" statements can be made to connect any two people in a maximum of six steps.&rdquo; <cite>&mdash; Six degrees of separation</cite></p>
+									</blockquote>
+								</li>
+								<li>
+									<blockquote>
+										<p>&ldquo;Most of us are linked by short chains of acquaintances — was first investigated as a question in sociology1,2 and is a feature of a range of networks arising in nature and technology.&rdquo; <cite>&mdash; The small world </cite></p>
+									</blockquote>
+								</li>
+							</ul>
+						</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="fh5co-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 animate-box">
+						<div class="fh5co-footer-widget">
+							<p>&copy; <i>Insight.</i> All Rights Reserved.</p>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6 animate-box">
+						<div class="fh5co-footer-widget">
+							<ul class="fh5co-social pull-right">
+								<li>
+									<a href="#"><i class="icon-twitter"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="icon-facebook"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="icon-vine"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="icon-behance"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="icon-google"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="icon-vimeo"></i></a>
+								</li>
+							</ul>
+						<div class="fh5co-footer-widget">
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div> <!-- END fh5co-page -->
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+	<!-- Main JS -->
+	<script src="js/main.js"></script>
+
+	</body>
 </html>
+
